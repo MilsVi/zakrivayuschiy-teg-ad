@@ -1,13 +1,3 @@
-/* этот скрипт использует такие имена классов:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
-*/
-
 const likeHeartArray = document.querySelectorAll('.like-icon');
 const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
@@ -39,3 +29,21 @@ function setButtonText(heart, button) {
     );
   }
 }
+
+const saveMemoryBtn = document.getElementById('saveMemoryBtn');
+const modalOverlay  = document.getElementById('modalOverlay');
+const modalOkBtn    = document.getElementById('modalOk');
+
+saveMemoryBtn.addEventListener('click', () => {
+  modalOverlay.classList.add('is-visible');
+});
+
+modalOkBtn.addEventListener('click', () => {
+  modalOverlay.classList.remove('is-visible');
+});
+
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove('is-visible');
+  }
+});
