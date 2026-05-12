@@ -1,1 +1,14 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+@media (max-width: 560px) {
+  .cards-container {
+    padding: 20px 10px;
+  }
+
+  .card__image {
+    height: 240px;
+  }
+
+  .pixel-car {
+    transform: translateX(-50%) scale(0.85);
+  }
+}
